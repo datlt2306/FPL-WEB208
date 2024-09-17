@@ -11,7 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products; let i = index">
+    @for( product of products; track product.id; let i = $index) {
+    <tr>
       <td scope="row">{{ i + 1 }}</td>
       <td><img [src]="product.imageUrl" width="50" height="50" /></td>
       <td>{{ product.name }}</td>
@@ -24,6 +25,11 @@
         <button>Chi tiết</button>
       </td>
     </tr>
+    } @empty {
+    <tr>
+      <td colspan="8">There are no items.</td>
+    </tr>
+    }
   </tbody>
 </table>
 <!-- 
