@@ -22,7 +22,7 @@
       <td>{{ product.starRating }}</td>
       <td>
         <button (click)="onRemove(product.id)">Xóa</button>
-        <button>Chi tiết</button>
+        <button (click)="setProduct(product)">Chi tiết</button>
       </td>
     </tr>
     } @empty {
@@ -32,7 +32,15 @@
     }
   </tbody>
 </table>
+<hr />
+@if(selectedProduct){
+<app-product-detail [product]="selectedProduct"></app-product-detail>
+}
+<!-- hiển thị chi tiết sản phẩm -->
 <!-- 
 1. Xóa sản phẩm: sử dụng event binding
 2. Click vào button chi tiết, hiển thị dữ liệu dưới table
+  2.1 Khai báo biến productDetail
+  2.2 Click vào button chi tiết, gán giá trị cho productDetail
+  2.3 Hiển thị productDetail dưới table
 -->

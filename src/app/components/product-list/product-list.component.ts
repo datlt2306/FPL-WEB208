@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { IProduct } from '../../interfaces/product';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor, FormsModule],
+  imports: [NgFor, FormsModule, ProductDetailComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  selectedProduct!: IProduct;
   products: IProduct[] = [
     {
       "id": 1,
@@ -108,5 +110,8 @@ export class ProductListComponent {
     if (confirm) {
       this.products = this.products.filter(product => product.id !== id);
     }
+  }
+  setProduct(product: IProduct) {
+    this.selectedProduct = product;
   }
 }
