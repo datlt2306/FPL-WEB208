@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../intefaces/product';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [],
+  imports: [ProductDetailComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  selectedProduct!: IProduct
   products: IProduct[] = [
     {
       "id": 899,
@@ -93,5 +95,8 @@ export class ProductListComponent {
 
   onRemoveProduct(id: number) {
     this.products = this.products.filter(product => product.id !== id);
+  }
+  setProduct(product: IProduct) {
+    this.selectedProduct = product;
   }
 }

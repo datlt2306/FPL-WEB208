@@ -33,7 +33,7 @@
         <button class="btn btn-danger" (click)="onRemoveProduct(product.id)">
           Xóa
         </button>
-        <button>Chi tiết</button>
+        <button (click)="setProduct(product)">Chi tiết</button>
       </td>
     </tr>
     } @empty {
@@ -43,3 +43,8 @@
     }
   </tbody>
 </table>
+@if(selectedProduct){
+<app-product-detail [product]="selectedProduct"></app-product-detail>
+}
+
+<!-- <ProductDetail product={selectedProduct} /> -->
