@@ -90,4 +90,8 @@ export class ProductListComponent {
       "starRating": 2.9
     }
   ]
+
+  onRemoveProduct(id: number) {
+    this.products = this.products.filter(product => product.id !== id);
+  }
 }

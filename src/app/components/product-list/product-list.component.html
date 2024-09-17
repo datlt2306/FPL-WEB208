@@ -29,7 +29,12 @@
       <td>{{ product.code }}</td>
       <td>{{ product.available ? "Còn hàng" : "Hết hàng" }}</td>
       <td>{{ product.starRating }}</td>
-      <td><button class="btn btn-danger">Xóa</button></td>
+      <td>
+        <button class="btn btn-danger" (click)="onRemoveProduct(product.id)">
+          Xóa
+        </button>
+        <button>Chi tiết</button>
+      </td>
     </tr>
     } @empty {
     <tr>
