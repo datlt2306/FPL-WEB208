@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../interfaces/product';
 import { NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, FormsModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -17,7 +18,8 @@ export class ProductListComponent {
       "code": "SPX-001",
       "available": true,
       "price": 999.99,
-      "starRating": 4.8
+      "starRating": 4.8,
+      "imageUrl": "https://picsum.photos/id/1/200/300"
     },
     {
       "id": 2,
@@ -25,7 +27,8 @@ export class ProductListComponent {
       "code": "WH-202",
       "available": false,
       "price": 199.99,
-      "starRating": 4.5
+      "starRating": 4.5,
+      "imageUrl": "https://picsum.photos/id/2/200/300"
     },
     {
       "id": 3,
@@ -33,7 +36,8 @@ export class ProductListComponent {
       "code": "GLGT-500",
       "available": true,
       "price": 1499.99,
-      "starRating": 4.7
+      "starRating": 4.7,
+      "imageUrl": "https://picsum.photos/id/3/200/300"
     },
     {
       "id": 4,
@@ -41,7 +45,8 @@ export class ProductListComponent {
       "code": "4KMU-120",
       "available": true,
       "price": 399.99,
-      "starRating": 4.6
+      "starRating": 4.6,
+      "imageUrl": "https://picsum.photos/id/4/200/300"
     },
     {
       "id": 5,
@@ -49,7 +54,8 @@ export class ProductListComponent {
       "code": "MK-340",
       "available": true,
       "price": 89.99,
-      "starRating": 4.2
+      "starRating": 4.2,
+      "imageUrl": "https://picsum.photos/id/5/200/300"
     },
     {
       "id": 6,
@@ -57,7 +63,8 @@ export class ProductListComponent {
       "code": "SWF-111",
       "available": false,
       "price": 149.99,
-      "starRating": 4.4
+      "starRating": 4.4,
+      "imageUrl": "https://picsum.photos/id/6/200/300"
     },
     {
       "id": 7,
@@ -65,7 +72,8 @@ export class ProductListComponent {
       "code": "BTS-600",
       "available": true,
       "price": 59.99,
-      "starRating": 4.3
+      "starRating": 4.3,
+      "imageUrl": "https://picsum.photos/id/7/200/300"
     },
     {
       "id": 8,
@@ -73,7 +81,8 @@ export class ProductListComponent {
       "code": "PSSD-1T",
       "available": true,
       "price": 129.99,
-      "starRating": 4.9
+      "starRating": 4.9,
+      "imageUrl": "https://picsum.photos/id/8/200/300"
     },
     {
       "id": 9,
@@ -81,7 +90,8 @@ export class ProductListComponent {
       "code": "DMA-900",
       "available": false,
       "price": 899.99,
-      "starRating": 4.8
+      "starRating": 4.8,
+      "imageUrl": "https://picsum.photos/id/9/200/300"
     },
     {
       "id": 10,
@@ -89,7 +99,14 @@ export class ProductListComponent {
       "code": "AC-4K-220",
       "available": true,
       "price": 299.99,
-      "starRating": 4.5
+      "starRating": 4.5,
+      "imageUrl": "https://picsum.photos/id/10/200/300"
     }
   ]
+  onRemove(id: number) {
+    const confirm = window.confirm(`Are you sure you want to remove product with id ${id}?`);
+    if (confirm) {
+      this.products = this.products.filter(product => product.id !== id);
+    }
+  }
 }

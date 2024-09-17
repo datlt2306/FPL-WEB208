@@ -5,4 +5,5 @@ export interface IProduct {
     available: boolean;
     price: number;
     starRating: number;
+    imageUrl: string;
 }

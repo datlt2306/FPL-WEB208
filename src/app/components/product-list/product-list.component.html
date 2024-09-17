@@ -7,16 +7,26 @@
       <th scope="col">Available</th>
       <th scope="col">Price</th>
       <th scope="col">Star Rating</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let product of products; let i = index">
-      <th scope="row">{{ i + 1 }}</th>
+      <td scope="row">{{ i + 1 }}</td>
+      <td><img [src]="product.imageUrl" width="50" height="50" /></td>
       <td>{{ product.name }}</td>
       <td>{{ product.code }}</td>
       <td>{{ product.available ? "Yes" : "No" }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.starRating }}</td>
+      <td>
+        <button (click)="onRemove(product.id)">Xóa</button>
+        <button>Chi tiết</button>
+      </td>
     </tr>
   </tbody>
 </table>
+<!-- 
+1. Xóa sản phẩm: sử dụng event binding
+2. Click vào button chi tiết, hiển thị dữ liệu dưới table
+-->
