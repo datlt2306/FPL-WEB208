@@ -19,7 +19,8 @@
             console.log(item); // 1, 2, 3, 4
         }
     -->
-    <tr *ngFor="let product of products; let i = index">
+    @for(product of products; track product.id; let i = $index){
+    <tr>
       <td>
         {{ i + 1 }}
       </td>
@@ -30,5 +31,10 @@
       <td>{{ product.starRating }}</td>
       <td><button class="btn btn-danger">Xóa</button></td>
     </tr>
+    } @empty {
+    <tr>
+      <td colspan="7">Không có sản phẩm nào</td>
+    </tr>
+    }
   </tbody>
 </table>

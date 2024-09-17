@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../intefaces/product';
-import { NgFor } from '@angular/common';
-
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
