@@ -99,4 +99,8 @@ export class ProductListComponent {
   setProduct(product: IProduct) {
     this.selectedProduct = product;
   }
+  getProduct(id: number) {
+    console.log(id);
+    // return this.products.find(product => product.id === id);
+  }
 }
