@@ -34,7 +34,10 @@
 </table>
 <hr />
 @if(selectedProduct){
-<app-product-detail [product]="selectedProduct"></app-product-detail>
+<app-product-detail
+  [product]="selectedProduct"
+  (onHandleAdd)="handleAdd($event)"
+></app-product-detail>
 }
 <!-- hiển thị chi tiết sản phẩm -->
 <!-- 

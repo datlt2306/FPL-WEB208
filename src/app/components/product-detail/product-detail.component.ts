@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../interfaces/product';
 
 @Component({
@@ -10,4 +10,17 @@ import { IProduct } from '../../interfaces/product';
 })
 export class ProductDetailComponent {
   @Input() product!: IProduct;
+  @Output() onHandleAdd = new EventEmitter<number>();
+  onHandleAddToCart(id: number) {
+    console.log('id in child component', id);
+    this.onHandleAdd.emit(id);
+  }
 }
+
+/**
+ * // Parent.jsx
+ * function onHandle(id){
+ * console.log(id)}
+ * 
+ * <Child props={data} onRemove={onHandle}/>
+ */

@@ -3,11 +3,12 @@ import { IProduct } from '../../interfaces/product';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { ProductItemComponent } from '../product-item/product-item.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor, FormsModule, ProductDetailComponent],
+  imports: [NgFor, FormsModule, ProductDetailComponent, ProductItemComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -113,5 +114,8 @@ export class ProductListComponent {
   }
   setProduct(product: IProduct) {
     this.selectedProduct = product;
+  }
+  handleAdd(id: number) {
+    console.log(id);
   }
 }
