@@ -1,21 +1,19 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit(formAdd)" #formAdd="ngForm">
     <div class="form-group">
-        <label>Tài khoản</label>
-        <input
-            type="email"
-            class="form-control"
-            [(ngModel)]="user.email"
-            name="user"
-        />
+        <label>Tên sản phẩm</label>
+        <input type="text" class="form-control" ngModel name="name" />
     </div>
     <div class="form-group">
-        <label>Mật khẩu</label>
-        <input
-            type="password"
-            class="form-control"
-            [(ngModel)]="user.password"
-            name="pass"
-        />
+        <label>Giá sản phẩm</label>
+        <input type="number" class="form-control" ngModel name="price" />
     </div>
-    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+    <button type="submit" class="btn btn-primary">Thêm mới</button>
 </form>
+
+<!-- 
+Có 2 cách để làm việc với form trong Angular:
+1. Template-driven forms: Dựa vào các directives để thực hiện validation.
+    1. Oneway: ngModel name="xx"
+    2. two-way: [(ngModel)]="xx"
+2. Reactive forms: Dựa vào các services để thực hiện validation.
+-->

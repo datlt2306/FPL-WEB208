@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-product-add',
@@ -9,11 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './product-add.component.css'
 })
 export class ProductAddComponent {
-  user = {
-    email: "",
-    password: ""
-  }
-  onSubmit() {
-    console.log(this.user);
+  @Output() onAdd = new EventEmitter<any>();
+  onSubmit(formAdd: NgForm) {
+    // gửi dữ liệu lên component cha
+    this.onAdd.emit(formAdd.value);
   }
 }
