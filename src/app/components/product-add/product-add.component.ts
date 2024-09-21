@@ -13,6 +13,9 @@ export class ProductAddComponent {
   product = {
     name: "",
     price: 0,
+    available: false,
+    type: "Loại 1",
+    category: "Danh mục 2",
   }
   onHandleAdd() {
     console.log(this.product)

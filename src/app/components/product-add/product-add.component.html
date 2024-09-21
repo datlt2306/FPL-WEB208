@@ -1,11 +1,27 @@
 <form (ngSubmit)="onHandleAdd()">
   <div>
-    <label for="name">Tên sản phẩm</label>
+    <label>Tên sản phẩm</label>
     <input type="text" [(ngModel)]="product.name" name="name" />
   </div>
   <div>
-    <label for="name">Giá sản phẩm</label>
+    <label>Giá sản phẩm</label>
     <input type="number" [(ngModel)]="product.price" name="price" />
+  </div>
+  <div>
+    <label>Tình trạng</label>
+    <input type="checkbox" [(ngModel)]="product.available" name="available" />
+  </div>
+  <div>
+    <label>Loại sản phẩm</label>
+    <input type="radio" [(ngModel)]="product.type" name="type" value="Loại 1" />
+    <input type="radio" [(ngModel)]="product.type" name="type" value="Loại 2" />
+  </div>
+  <div>
+    <label>Danh mục</label>
+    <select name="category" [(ngModel)]="product.category" id="">
+      <option value="Danh mục 1">Danh mục 1</option>
+      <option value="Danh mục 2">Danh mục 2</option>
+    </select>
   </div>
   <button>Submit</button>
 </form>
