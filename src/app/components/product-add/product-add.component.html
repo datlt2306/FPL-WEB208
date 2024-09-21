@@ -1,7 +1,18 @@
 <form (ngSubmit)="onHandleAdd()">
   <div>
     <label>Tên sản phẩm</label>
-    <input type="text" [(ngModel)]="product.name" name="name" />
+    <input
+      type="text"
+      [(ngModel)]="product.name"
+      name="name"
+      #name="ngModel"
+      required
+      min="10"
+    />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <p *ngIf="name.errors?.['required']">Trường Name là bắt buộc</p>
+      <p *ngIf="name.errors?.['min']">Trường Name ít nhất 10 ký tự</p>
+    </div>
   </div>
   <div>
     <label>Giá sản phẩm</label>
