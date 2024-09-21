@@ -1,20 +1,22 @@
-<form (ngSubmit)="onHandleAdd()">
+<form (ngSubmit)="onHandleAdd(formAdd)" #formAdd="ngForm">
   <div>
     <label>Tên sản phẩm</label>
-    <input
-      type="text"
-      [(ngModel)]="product.name"
-      name="name"
-      #name="ngModel"
-      required
-      min="10"
-    />
-    <div *ngIf="name.invalid && (name.dirty || name.touched)">
-      <p *ngIf="name.errors?.['required']">Trường Name là bắt buộc</p>
-      <p *ngIf="name.errors?.['min']">Trường Name ít nhất 10 ký tự</p>
+    <input type="text" name="name" ngModel required min="10" />
+    <div
+      *ngIf="
+        formAdd.control?.name?.invalid &&
+        (formAdd.control?.name?.dirty || formAdd.control?.name?.touched)
+      "
+    >
+      <p *ngIf="formAdd.control?.name?.errors?.['required']">
+        Trường Name là bắt buộc
+      </p>
+      <p *ngIf="formAdd.control?.name?.errors?.['min']">
+        Trường Name ít nhất 10 ký tự
+      </p>
     </div>
   </div>
-  <div>
+  <!-- <div>
     <label>Giá sản phẩm</label>
     <input type="number" [(ngModel)]="product.price" name="price" />
   </div>
@@ -33,6 +35,6 @@
       <option value="Danh mục 1">Danh mục 1</option>
       <option value="Danh mục 2">Danh mục 2</option>
     </select>
-  </div>
+  </div> -->
   <button>Submit</button>
 </form>
