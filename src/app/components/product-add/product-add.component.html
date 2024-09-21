@@ -1,0 +1,11 @@
+<form (ngSubmit)="onHandleAdd()">
+  <div>
+    <label for="name">Tên sản phẩm</label>
+    <input type="text" [(ngModel)]="product.name" name="name" />
+  </div>
+  <div>
+    <label for="name">Giá sản phẩm</label>
+    <input type="number" [(ngModel)]="product.price" name="price" />
+  </div>
+  <button>Submit</button>
+</form>
