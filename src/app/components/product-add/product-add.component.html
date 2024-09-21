@@ -1,11 +1,54 @@
-<form (ngSubmit)="onSubmit(formAdd)" #formAdd="ngForm">
+<form (ngSubmit)="onHandleAdd(formAdd)" #formAdd="ngForm">
     <div class="form-group">
         <label>Tên sản phẩm</label>
-        <input type="text" class="form-control" ngModel name="name" />
+        <input
+            type="text"
+            class="form-control"
+            name="name"
+            ngModel
+            required
+            minlength="6"
+        />
+        <div
+            *ngIf="
+                formAdd.controls['name'].invalid &&
+                (formAdd.controls['name'].dirty ||
+                    formAdd.controls['name'].touched)
+            "
+        >
+            <div *ngIf="formAdd.controls['name'].errors?.['required']">
+                Bắt buộc nhập
+            </div>
+            <div *ngIf="formAdd.controls['name'].errors?.['minlength']">
+                6 ký tự trở lên
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label>Giá sản phẩm</label>
-        <input type="number" class="form-control" ngModel name="price" />
+        <input type="number" class="form-control" name="price" ngModel />
+    </div>
+    <div class="form-group">
+        <label>Ảnh sản phẩm</label>
+        <input type="text" class="form-control" name="imageUrl" ngModel />
+    </div>
+    <div class="form-group">
+        <label>Danh mục</label>
+        <select name="category" ngModel>
+            <option value="1">Danh mục A</option>
+            <option value="2">Danh mục B</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Loại sản phẩm</label>
+        <input type="radio" name="type" value="Loại 1" ngModel />
+        Loại 1
+        <input type="radio" name="type" value="Loại 2" ngModel />
+        Loại 2<br />
+    </div>
+    <div class="form-group">
+        <label>Tình trạng:</label>
+        <input type="checkbox" name="available" ngModel />
     </div>
     <button type="submit" class="btn btn-primary">Thêm mới</button>
 </form>
