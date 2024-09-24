@@ -1,17 +1,17 @@
 <form (ngSubmit)="onHandleAdd(formAdd)" #formAdd="ngForm">
   <div>
     <label>Tên sản phẩm</label>
-    <input type="text" name="name" ngModel required min="10" />
+    <input type="text" name="name" ngModel required minlength="10" />
     <div
       *ngIf="
-        formAdd.control?.name?.invalid &&
-        (formAdd.control?.name?.dirty || formAdd.control?.name?.touched)
+        formAdd.controls['name']?.invalid &&
+        (formAdd.controls['name']?.dirty || formAdd.controls['name']?.touched)
       "
     >
-      <p *ngIf="formAdd.control?.name?.errors?.['required']">
+      <p *ngIf="formAdd.controls['name']?.errors?.['required']">
         Trường Name là bắt buộc
       </p>
-      <p *ngIf="formAdd.control?.name?.errors?.['min']">
+      <p *ngIf="formAdd.controls['name']?.errors?.['minlength']">
         Trường Name ít nhất 10 ký tự
       </p>
     </div>
