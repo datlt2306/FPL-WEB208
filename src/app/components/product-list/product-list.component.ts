@@ -18,8 +18,14 @@ export class ProductListComponent {
   myName!: string;
   products!: IProduct[]
   constructor(private productService: ProductService) {
-    this.products = this.productService.getProduct();
+    console.log('constructor')
   }
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products
+    })
+  }
+
   onRemove(id: number) {
     const confirm = window.confirm(`Are you sure you want to remove product with id ${id}?`);
     if (confirm) {
@@ -35,3 +41,5 @@ export class ProductListComponent {
 }
 
 // ng g s services/product
+
+// Component Product <- ProductService <- HttpClientService

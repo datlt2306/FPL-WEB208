@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-add',
@@ -10,8 +11,13 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './product-add.component.css'
 })
 export class ProductAddComponent {
+  constructor(private productService: ProductService) {
+
+  }
   onHandleAdd(form: NgForm) {
     if (form.invalid) return;
-    console.log(form.value)
+    this.productService.addProduct(form.value).subscribe(product => {
+      console.log(product);
+    })
   }
 }
