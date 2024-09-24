@@ -4,6 +4,8 @@ import { AdminProductsPageComponent } from './pages/admin/admin-products-page/ad
 import { LayoutWebsiteComponent } from './layouts/layout-website/layout-website.component';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { DashboardPageComponent } from './pages/admin/dashboard-page/dashboard-page.component';
 
 export const routes: Routes = [
     {
@@ -12,5 +14,11 @@ export const routes: Routes = [
             { path: "about", component: AboutComponent },
         ]
     },
-    { path: 'admin', component: LayoutAdminComponent },
+    {
+        path: 'admin', component: LayoutAdminComponent, children: [
+            { path: "", redirectTo: "dashboard", pathMatch: 'full' },
+            { path: "dashboard", component: DashboardPageComponent }
+        ]
+    },
+    { path: "**", component: NotFoundComponent }
 ];
