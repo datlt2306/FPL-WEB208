@@ -13,6 +13,6 @@ export class ProductAddComponent {
   @Output() onAdd = new EventEmitter<any>();
   onHandleAdd(form: NgForm) {
     if (!form.valid) return;
-    console.log(form.value);
+
   }
 }
