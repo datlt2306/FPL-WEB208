@@ -1,0 +1,30 @@
+<h2>Quản lý sản phẩm</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Loại hàng</th>
+      <th>Hiển thị</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.type === "type1" ? "Loại cũ" : "Loại mới" }}</td>
+      <td>{{ product.published ? "Bật" : "Tắt" }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="onRemoveItem(product.id!)">
+          Xóa
+        </button>
+        <button routerLink="/admin/products/{{ product.id }}/edit">
+          Cập nhật
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

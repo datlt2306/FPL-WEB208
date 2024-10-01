@@ -1,18 +1,23 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Product 1",
-      "price": 100
+      "name": "Sản phẩm 1",
+      "price": 100,
+      "type": "type1",
+      "published": true,
+      "description": "Mô tả",
+      "category": "cate1",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Product 2",
-      "price": 200
-    },
-    {
-      "name": "1231312132131",
-      "id": 3
+      "name": "Sản phẩm 3 update",
+      "price": 300,
+      "type": "type1",
+      "published": true,
+      "description": "Mô tả",
+      "category": "cate2",
+      "id": 2
     }
-  ]
+  ],
+  "users": []
 }
