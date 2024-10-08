@@ -10,6 +10,7 @@ import { AdminProductsPageComponent } from './pages/admin-products-page/admin-pr
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsAddComponent } from './pages/products-add/products-add.component';
 import { ProductsEditComponent } from './pages/products-edit/products-edit.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -22,7 +23,7 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'admin', component: LayoutAdminComponent, children: [
+        path: 'admin', component: LayoutAdminComponent, canActivate: [authGuard], children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
             { path: 'products', component: AdminProductsPageComponent },
