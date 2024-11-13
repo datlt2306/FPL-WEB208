@@ -3,6 +3,19 @@
   <div class="mb-3">
     <label for="" class="form-label">Tên sản phẩm</label>
     <input type="text" class="form-control" formControlName="name" />
+    <div
+      *ngIf="
+        productForm.get('name').invalid &&
+        (productForm.get('name').dirty || productForm.get('name').touched)
+      "
+    >
+      <div *ngIf="productForm.get('name').errors.required">
+        Tên sản phẩm không được để trống
+      </div>
+      <div *ngIf="productForm.get('name').errors.minlength">
+        Tên sản phẩm phải lớn hơn 5 ký tự
+      </div>
+    </div>
   </div>
   <div class="mb-3">
     <label for="" class="form-label">Giá sản phẩm</label>
