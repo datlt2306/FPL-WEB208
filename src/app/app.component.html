@@ -5,10 +5,5 @@
   <p>{{ student.code }}</p>
 </div>
 <button (click)="changeName()">Change Name</button>
-<div *ngFor="let student of students">
-  <p>
-    {{ student.name }} -
-    <button (click)="removeStudent(student.id)">Xóa</button>
-  </p>
-</div>
-<app-product-list></app-product-list>
+
+<app-product-list [students]="students"></app-product-list>

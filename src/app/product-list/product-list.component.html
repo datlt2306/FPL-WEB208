@@ -1,1 +1,6 @@
-<p>product-list works!</p>
+<div *ngFor="let student of students">
+  <p>
+    {{ student.name }} -
+    <button (click)="removeStudent(student.id)">Xóa</button>
+  </p>
+</div>
