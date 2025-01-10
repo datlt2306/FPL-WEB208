@@ -6,4 +6,7 @@
 </div>
 <button (click)="changeName()">Change Name</button>
 
-<app-product-list [students]="students"></app-product-list>
+<app-product-list
+  [students]="students"
+  (onRemove)="onHandleRemove($event)"
+></app-product-list>

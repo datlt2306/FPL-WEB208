@@ -26,8 +26,8 @@ export class AppComponent {
   changeName() {
     this.student.name = "Đạt";
   }
-  removeStudent(id: number) {
-    console.log(id);
+  onHandleRemove(id: number) {
+    this.students = this.students.filter(student => student.id !== id);
   }
 }
 
