@@ -1,12 +1,1 @@
-<h2 class="title">Hello {{ title }}</h2>
-<div>
-  <p>{{ student.name }}</p>
-  <p>{{ student.age }}</p>
-  <p>{{ student.code }}</p>
-</div>
-<button (click)="changeName()">Change Name</button>
-
-<app-product-list
-  [students]="students"
-  (onRemove)="onHandleRemove($event)"
-></app-product-list>
+<router-outlet />
