@@ -12,7 +12,9 @@ export class ProductService {
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL);
   }
-
+  addProduct(product: any): Observable<any> {
+    return this.http.post<any>(this.API_URL, product);
+  }
 }
 
 
