@@ -1,0 +1,32 @@
+<h2>Edit sản phẩm</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name" />
+  <div
+    *ngIf="
+      productForm.get('name').invalid &&
+      (productForm.get('name').dirty || productForm.get('name').touched)
+    "
+  >
+    <p class="text-danger" *ngIf="productForm.get('name').errors.required">
+      Name is required
+    </p>
+    <p class="text-danger" *ngIf="productForm.get('name').errors.minlength">
+      Min length is 3
+    </p>
+  </div>
+  <input type="number" formControlName="price" />
+  <div
+    *ngIf="
+      productForm.get('price').invalid &&
+      (productForm.get('price').dirty || productForm.get('price').touched)
+    "
+  >
+    <p class="text-danger" *ngIf="productForm.get('price').errors.required">
+      Name is required
+    </p>
+    <p class="text-danger" *ngIf="productForm.get('price').errors.min">
+      Min is 0
+    </p>
+  </div>
+  <button htmlType="submit">Submit</button>
+</form>

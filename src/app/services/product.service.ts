@@ -12,10 +12,18 @@ export class ProductService {
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(this.API_URL);
   }
+  getProduct(id: number): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/${id}`);
+  }
   addProduct(product: any): Observable<any> {
     return this.http.post<any>(this.API_URL, product);
+  }
+  updateProduct(product: any): Observable<any> {
+    return this.http.put<any>(`${this.API_URL}/${product.id}`, product);
   }
 }
 
 
 
+// Lấy id trên url -> call api -> hiển thị thông tin sản phẩm vào form
+// Thay đổi giá trị form -> submit -> call api -> thông báo thành công
