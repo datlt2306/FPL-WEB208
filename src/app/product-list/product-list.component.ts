@@ -1,33 +1,33 @@
-import { NgFor } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CurrencyPipe, NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, CurrencyPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
   // @Input() students: any[] = []
-  @Output() onRemove = new EventEmitter<number>();
+  // @Output() onRemove = new EventEmitter<number>();
 
-  students!: any[];
+  products!: any[];
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(data => {
-      this.students = data;
+      this.products = data;
     })
   }
 
-  removeStudent(id: number) {
-    this.onRemove.emit(id)
+  removeProduct(id: number) {
+    if (window.confirm('Bạn có chắc chắn muốn xóa không?')) {
+      this.productService.removeProduct(id).subscribe(() => {
+        alert('Xóa thành công');
+        this.products = this.products.filter(product => product.id !== id);
+      })
+    }
   }
-  // inject service vào constructor
 }
 
-
-
-// ng g s ten_service
-// class A vào class B => inject vào constructor

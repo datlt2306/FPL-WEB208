@@ -3,9 +3,10 @@
 >
   <h1 class="h2">Quản lý sản phẩm</h1>
 </div>
-<div *ngFor="let student of students">
+<div *ngFor="let product of products">
   <p>
-    {{ student.name }} -
-    <button (click)="removeStudent(student.id)">Xóa</button>
+    {{ product.name }} -
+    {{ product.price | currency : "VND" : "symbol" : "1.0-0" }}
+    <button (click)="removeProduct(product.id)">Xóa</button>
   </p>
 </div>

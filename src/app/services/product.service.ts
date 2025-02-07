@@ -21,9 +21,15 @@ export class ProductService {
   updateProduct(product: any): Observable<any> {
     return this.http.put<any>(`${this.API_URL}/${product.id}`, product);
   }
+  removeProduct(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/${id}`);
+  }
 }
 
-
+// what? 
+// why?
+// when?
+// how?
 
 // Lấy id trên url -> call api -> hiển thị thông tin sản phẩm vào form
 // Thay đổi giá trị form -> submit -> call api -> thông báo thành công
