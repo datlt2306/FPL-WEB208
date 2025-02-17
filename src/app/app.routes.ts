@@ -10,6 +10,7 @@ import { TestimonialComponent } from './pages/testimonial/testimonial.component'
 import { WhyComponent } from './pages/why/why.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 export const routes: Routes = [
     {
@@ -19,7 +20,8 @@ export const routes: Routes = [
             { path: "testimonial", component: TestimonialComponent },
             { path: "why", component: WhyComponent },
             { path: "contact", component: ContactComponent },
-            { path: "product/:id", component: ProductDetailComponent }
+            { path: "product/:id", component: ProductDetailComponent },
+            { path: "signup", component: SignupComponent },
         ]
     },
     {

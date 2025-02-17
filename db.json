@@ -5,5 +5,12 @@
       "price": 400,
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$souwBEWefPRDRtoIXXFJMe9nWQ4Up6FXNv0OjLYyEnTKGMFZaCMwG",
+      "id": 1
+    }
   ]
 }

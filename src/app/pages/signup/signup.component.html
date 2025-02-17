@@ -1,0 +1,31 @@
+<form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+  <input type="email" formControlName="email" />
+  <div
+    *ngIf="
+      authForm.get('email').invalid &&
+      (authForm.get('email').dirty || authForm.get('email').touched)
+    "
+  >
+    <p class="text-danger" *ngIf="authForm.get('email').errors.required">
+      Email is required
+    </p>
+    <p class="text-danger" *ngIf="authForm.get('email').errors.email">
+      Email is invalid
+    </p>
+  </div>
+  <input type="password" formControlName="password" />
+  <div
+    *ngIf="
+      authForm.get('password').invalid &&
+      (authForm.get('password').dirty || authForm.get('password').touched)
+    "
+  >
+    <p class="text-danger" *ngIf="authForm.get('password').errors.required">
+      Password is required
+    </p>
+    <p class="text-danger" *ngIf="authForm.get('password').errors.minlength">
+      Min length is 6
+    </p>
+  </div>
+  <button htmlType="submit">Submit</button>
+</form>
