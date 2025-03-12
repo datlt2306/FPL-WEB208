@@ -10,4 +10,22 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Angular';
+  person = {
+    fullName: "Lê Trọng Đạt",
+    age: 36,
+    address: "Hà Nội",
+    isMarried: false,
+    picture: 'https://picsum.photos/200/300'
+  }
+  handleClick() {
+    // console.log(1)
+    this.person.isMarried = !this.person.isMarried
+  }
 }
+// function AppComponent(){
+//   const title
+//   const person = {}
+//   const handleSubmit = () => {
+
+//   }
+// }
