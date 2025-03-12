@@ -1,16 +1,3 @@
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="title">Hello {{ person.fullName }}</h4>
-          <img [src]="person.picture" alt="" />
-          <p>{{ person.isMarried ? "Đã kết hôn" : "Chưa kết hôn" }}</p>
-          <button (click)="handleClick()">Click</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Controller => view ( interpolation ) -->
-<!-- Controller => view ( property binding ) -->
+<app-counter></app-counter>
+<hr />
+<app-product-list></app-product-list>
