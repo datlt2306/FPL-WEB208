@@ -25,7 +25,7 @@
 </table>
 
 <div *ngIf="product">
-  <app-product-detail [name]="product.name" />
+  <app-product-detail [name]="product.name" (demo)="getId($event)" />
 </div>
 
 <!-- 

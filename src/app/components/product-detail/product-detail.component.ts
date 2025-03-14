@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,6 +9,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductDetailComponent {
   @Input() name!: string;
+  @Output() demo = new EventEmitter();
+
+
+  thongbao() {
+    const id = 10
+    this.demo.emit(id)
+  }
 }
 
 

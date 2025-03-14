@@ -25,4 +25,7 @@ export class ProductListComponent {
   setProduct(item: any) {
     this.product = item;
   }
+  getId(id: any) {
+    console.log(id);
+  }
 }
