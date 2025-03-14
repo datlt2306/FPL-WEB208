@@ -14,7 +14,9 @@
       <td>{{ item.price }}</td>
       <td>
         <button class="btn btn-primary">Cập nhật</button>
-        <button class="btn btn-danger">Xóa</button>
+        <button class="btn btn-danger" (click)="removeItem(item.id!)">
+          Xóa
+        </button>
       </td>
     </tr>
   </tbody>
@@ -28,4 +30,9 @@ B3: Trong file product-list.component.html
   - Hiển thị danh sách sản phẩm
   - Sử dụng ngFor để lặp qua mảng products
   - Hiển thị thông tin sản phẩm
+-->
+
+<!-- 
+- Component angular: ng g c ten_component --skipTests=true
+- Gọi component trong component cha: <app-ten-component></app-ten-component>
 -->

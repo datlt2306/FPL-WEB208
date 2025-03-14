@@ -24,7 +24,7 @@ export class AppComponent {
     this.person.isMarried = !this.person.isMarried
   }
 }
-// Bước 1: Tạo một component mới đặt tên là Counter
-// Bước 2: tạo 2 button ( increment, decrement )
-// Bước 3: Click vào button increment thì giá trị tăng lên 1
-// Bước 4: Click vào button decrement thì giá trị giảm đi 1
+/**
+ * Tạo component: ng g c ten_component --skipTests=true
+ * Gọi component: 
+ */
