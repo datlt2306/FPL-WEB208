@@ -13,7 +13,9 @@
       <td>{{ item.name }}</td>
       <td>{{ item.price }}</td>
       <td>
-        <button class="btn btn-primary">Cập nhật</button>
+        <button class="btn btn-primary" (click)="setProduct(item)">
+          Cập nhật
+        </button>
         <button class="btn btn-danger" (click)="removeItem(item.id!)">
           Xóa
         </button>
@@ -21,6 +23,8 @@
     </tr>
   </tbody>
 </table>
+
+<div *ngIf="product">{{ product?.name }}</div>
 
 <!-- 
 B1: Tạo component product-list: ng g c components/product-list

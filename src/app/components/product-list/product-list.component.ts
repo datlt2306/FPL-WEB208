@@ -1,14 +1,15 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  product!: any;
   products: any = [
     { id: 1, name: 'Iphone 12', price: 1000 }, // item
     { id: 2, name: 'Iphone 11', price: 900 },
@@ -19,5 +20,8 @@ export class ProductListComponent {
     const confirm = window.confirm(`Bạn có chắc chắn muốn xóa không?`);
     if (!confirm) return;
     this.products = this.products.filter((product: any) => product.id !== id);
+  }
+  setProduct(item: any) {
+    this.product = item;
   }
 }
