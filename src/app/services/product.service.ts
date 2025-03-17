@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getList() {
-    return [
-      { id: 1, name: 'Iphone 12', price: 1000 }, // item
-      { id: 2, name: 'Iphone 11', price: 900 },
-      { id: 3, name: 'Iphone 10', price: 800 },
-      { id: 4, name: 'Iphone 9', price: 700 },
-    ]
+  getList(): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:3000/products`);
   }
   create() {
 

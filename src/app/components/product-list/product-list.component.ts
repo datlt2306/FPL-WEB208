@@ -11,11 +11,12 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  product!: any;
   products: any;
 
   constructor(private productService: ProductService) {
-    this.products = this.productService.getList()
+    this.productService.getList().subscribe(data => {
+      this.products = data;
+    })
   }
 
   removeItem(id: number) {
