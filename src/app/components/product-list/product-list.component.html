@@ -13,9 +13,7 @@
       <td>{{ item.name }}</td>
       <td>{{ item.price }}</td>
       <td>
-        <button class="btn btn-primary" (click)="setProduct(item)">
-          Cập nhật
-        </button>
+        <button class="btn btn-primary">Cập nhật</button>
         <button class="btn btn-danger" (click)="removeItem(item.id!)">
           Xóa
         </button>
@@ -23,22 +21,3 @@
     </tr>
   </tbody>
 </table>
-
-<div *ngIf="product">
-  <app-product-detail [name]="product.name" (demo)="getId($event)" />
-</div>
-
-<!-- 
-B1: Tạo component product-list: ng g c components/product-list
-B2: Trong file product-list.component.ts
-  - Tạo mảng products
-B3: Trong file product-list.component.html
-  - Hiển thị danh sách sản phẩm
-  - Sử dụng ngFor để lặp qua mảng products
-  - Hiển thị thông tin sản phẩm
--->
-
-<!-- 
-- Component angular: ng g c ten_component --skipTests=true
-- Gọi component trong component cha: <app-ten-component></app-ten-component>
--->
