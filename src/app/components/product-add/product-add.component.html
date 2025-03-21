@@ -1,0 +1,5 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Tên sản phẩm" formControlName="name" />
+  <input type="number" placeholder="Giá sản phẩm" formControlName="price" />
+  <button type="submit">Save</button>
+</form>

@@ -11,8 +11,8 @@ export class ProductService {
   getList(): Observable<any[]> {
     return this.http.get<any[]>(`http://localhost:3000/products`);
   }
-  create() {
-
+  create(formData: any): Observable<any> {
+    return this.http.post<any>(`http://localhost:3000/products`, formData);
   }
   update() {
 

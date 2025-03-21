@@ -1,23 +1,306 @@
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Tên</th>
-      <th>Giá</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of products; let i = index">
-      <td>{{ i + 1 }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.price }}</td>
-      <td>
-        <button class="btn btn-primary">Cập nhật</button>
-        <button class="btn btn-danger" (click)="removeItem(item.id!)">
-          Xóa
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<h1 class="title">
+  Dự án Đông Dương Đức Thượng - Hoài Đức, Hà Nội – Cơ Hội Đầu Tư &amp; An Cư
+  2025
+</h1>
+<div class="desc">
+  <strong>Dự án Liên Kề Đông Dương Đức Thượng (Đông Dương Residence)</strong> là
+  dự án trọng điểm tại xã Đức Thượng, Huyện Hoài Đức, Hà Nội. Dự án này có tổng
+  diện tích gần 8ha. Sản phẩm chủ yếu là nhà liền kề và shophouse. Đây được đánh
+  giá là dự án HOT đáng để mua ở, đầu tư trong giai đoạn hiện tại.
+</div>
+<div class="desc">
+  - Dự án đang trong giai đoạn bàn giao nhà do vậy khách mua có thể nhận nhà vào
+  ở được ngay.
+</div>
+<div>
+  - Các căn liền kề đã bàn giao CĐT đang tiến hành làm sổ đỏ, dự kiến từ 2-3
+  tháng sẽ sang tên xong sổ đỏ cho khách hàng.
+</div>
+<div class="tw-my-3">
+  BẢNG HÀNG NGOẠI GIAO VÀ CHUYỂN NHƯỢNG TẠI ĐÔNG DƯƠNG RESIDENCE THÁNG 3/2025:
+</div>
+<div>
+  <a
+    class="lightbox-gallery"
+    href="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/Anh-chup-Man-hinh-2025-03-18-luc-10.39.14.png"
+  >
+    [caption id="attachment_304" align="aligncenter" width="907"]<img
+      class="wp-image-304"
+      src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/Anh-chup-Man-hinh-2025-03-18-luc-10.39.14-300x203.png"
+      alt="Bảng hàng dự án Đông Dương Đức Thượng tháng 3/2025"
+      width="907"
+      height="614"
+    />
+    Bảng hàng dự án Đông Dương Đức Thượng tháng 3/2025[/caption]
+  </a>
+</div>
+
+<div>
+  <div id="tong-quan">
+    <h2><strong>Tổng Quan Dự Án Liền Kề Đông Dương Đức Thượng</strong></h2>
+    <strong>Dự án Liền Kề Đông Dương Đức Thượng, Hoài Đức, Hà Nội</strong> là
+    một khu đất đặc biệt được sử dụng để hỗ trợ giải phóng mặt bằng. Được xây
+    dựng phục vụ cho việc đầu tư hạ tầng kỹ thuật trong khu đấu giá tại xã Đức
+    Thượng. Mỗi lô đất đã được cấp sổ đỏ riêng. Khi những công trình xây dựng
+    hoàn thành và bàn giao cho khách hàng, sẽ tiếp tục cấp sổ đỏ cá nhân.
+    <a
+      class="lightbox-gallery"
+      href="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085627266467_f7c14d5cb09cc9539bd3463ccccf4d07-2048x1415.jpg"
+    >
+      [caption id="attachment_289" align="aligncenter" width="870"]<img
+        class="wp-image-289"
+        src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085627266467_f7c14d5cb09cc9539bd3463ccccf4d07-300x207.jpg"
+        alt="Phối cảnh dự án liền kề đông dương đức thượng – Hoài Đức, Hà Nội"
+        width="870"
+        height="600"
+      />
+      Phối cảnh dự án liền kề đông dương đức thượng – Hoài Đức, Hà Nội[/caption]
+    </a>
+    <ul>
+      <li>
+        - <strong>Tên dự án</strong>: Đầu tư xây dựng nhà ở tại khu đất bồi
+        thường, hỗ trợ giải phóng mặt bằng phục vụ đầu tư xây dựng hạ tầng kỹ
+        thuật tại Huyện Hoài Đức, Hà Nội.
+      </li>
+      <li>- <strong>Tên thương mại: </strong>Đông Dương Residence</li>
+      <li>
+        - <strong>Vị trí:</strong> Xã Đức Thượng, Huyện Hoài Đức, TP Hà Nội
+      </li>
+      <li>
+        - <strong>Chủ đầu tư:</strong> Công ty CP Đầu tư Xây dựng và phát triển
+        Đông Dương
+      </li>
+      <li>- <strong>Quy mô dự án:</strong> 7.97ha</li>
+      <li>- <strong>Tổng số lô: </strong>342 căn liền kề &amp; Shophouse</li>
+      <li>- <strong>Diện tích từ:</strong> 80m²- 150m²</li>
+      <li>- <strong>Mật độ xây dựng:</strong> 81%</li>
+      <li>
+        - <strong>Hoàn thiện:</strong> Xây thô bên trong, hoàn thiện mặt ngoài,
+        có chỗ chờ thang máy
+      </li>
+      <li>- <strong>Hình thức sở hữu:</strong> Sổ đỏ từng lô</li>
+      <li>- <strong>Thời điểm bàn giao nhà:</strong> Quý II/2025</li>
+    </ul>
+    <div>
+      <strong>Liền kề Đông Dương Đức Thượng</strong> được nằm trong khu vực này
+      có tiềm năng tăng giá lớn khi hưởng lợi từ quy hoạch giao thông phía Tây
+      Hà Nội. Bao gồm các tuyến đường quan trọng như Tây Thăng Long, đường vành
+      đai 4, đường liên khu vực 1 Hoài Đức và Cảng Cạn ICD.
+    </div>
+  </div>
+  <div class="tw-my-3" id="vi-tri">
+    <h2><strong>Vị Trí Dự Án Liền Kề Đông Dương Đức Thượng</strong></h2>
+    <strong>Vị trí dự án Đông Dương Đức Thượng</strong> nằm gần mặt đường Quốc
+    lộ 32, thuộc địa phận xã Đức Thượng huyện Hoài Đức. Khu vực này có tiềm năng
+    tăng giá lớn khi hưởng lợi từ quy hoạch giao thông phía Tây Hà Nội. Bao gồm
+    các tuyến đường quan trọng như Tây Thăng Long, đường vành đai 4, đường liên
+    khu vực 1 Hoài Đức và Cảng Cạn ICD.
+    <a
+      class="lightbox-gallery"
+      href="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/vi-tri.jpg"
+    >
+      [caption id="attachment_285" align="aligncenter" width="939"]<img
+        class="wp-image-285"
+        src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/vi-tri-300x139.jpg"
+        alt="Vị trí dự án Đông Dương Đức Thượng"
+        width="939"
+        height="435"
+      />
+      Vị trí liền kề Đông Dương Đức Thượng - Hoài Đức, Hà Nội[/caption]
+    </a>
+
+    <div>
+      <h3>
+        <strong>1. Kết nối với các khu đô thị phía tây bắc Hà Nội:</strong>
+      </h3>
+      <ul>
+        <li>- Cách khu đô thị mới Tân Tây Đô chỉ 700m</li>
+        <li>- Cách khu đô thị mới Lideco Bắc 32 chỉ 1.6km</li>
+        <li>- Cách khu đô thị mới Nam 32 Lũng lô 5 chỉ 1,2km</li>
+        <li>
+          - Cách khu đô thị mới Hinode Royal Park ( Kim Chung - Di Trạch) chỉ
+          2.5km
+        </li>
+        <li>
+          - Cách Khu đô thị sinh thái cao cấp Đan Phượng - The Phoenix Garden
+          hơn 3km
+        </li>
+        <li>- Cách khu đô thị Vinhomes Đan Phượng khoảng 2,5km</li>
+      </ul>
+      <h3><strong>2. Kết nối với các trục giao thông chính:</strong></h3>
+    </div>
+  </div>
+  <ul>
+    <li>
+      Cách mặt đường Quốc lộ 32 chỉ 50m di chuyển về trung tâm Hà Nội hoặc các
+      tỉnh phía tây Bắc
+    </li>
+    <li>
+      Cách đường vành đai 3.5 chỉ 2,5km di chuyển về Hà đông hoặc các quận huyện
+      khác
+    </li>
+    <li>
+      Cách đường Tây Thăng Long chỉ khoảng 2,5km di chuyển về Tây Hồ hoặc về Đan
+      Phượng, Sơn Tây, Phú Thọ…
+    </li>
+  </ul>
+  <h3>
+    <strong
+      >3. Kết nối với các khu thương mại, dịch vụ tiện ích, trường học hiện
+      hữu</strong
+    >
+  </h3>
+  <ul>
+    <li>- Bán kính 1,5km đầy đủ các trường mầm non, Cấp 1, cấp 2, cấp 3</li>
+    <li>- Bán kính 1.5km là các khu TTTM, chiếu phim Beta Cinexplex,</li>
+    <li>
+      - Bán kính 2km là khu sân vận động Hoài Đức, sân vận động Đan Phượng
+    </li>
+    <li>- Bán kính 2km là các khu bệnh viện Đa khoa Hoài Đức và Đan Phượng</li>
+    <li>
+      - Cách trường đại học công nghiệp Hà Nội 5km, cách cách trường trung cấp,
+      cao đẳng như Thành Đô, Tây An…khoảng 3km
+    </li>
+    <li>- Cách Ga tàu điện (Nhổn Depot metro Nhổn-Ga Hà Nội) khoảng 5km</li>
+    <li>
+      - Cách các tuyến bệnh viện lớn như bệnh viện Đa khoa Đan Phượng khoảng
+      03km, bệnh viện 198 Bộ Công an khoảng 10km
+    </li>
+  </ul>
+</div>
+<div id="mat-bang">
+  <h2>
+    <strong>Mặt Bằng Tổng Thể Dự Án Liền kề Đông Dương Đức Thượng:</strong>
+  </h2>
+  <a
+    class="lightbox-gallery"
+    href="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/Mat-bang-tren-thuc-te-2048x1152.jpg"
+  >
+    <img
+      class="wp-image-290 aligncenter"
+      src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/Mat-bang-tren-thuc-te-300x169.jpg"
+      alt=""
+      width="924"
+      height="521"
+    />
+  </a>
+  <a
+    class="lightbox-gallery"
+    href="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085616544404_57c57d86ce697c3aa4ed63d89e278d7f.jpg"
+  >
+    [caption id="attachment_291" align="aligncenter" width="934"]<img
+      class="wp-image-291"
+      src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085616544404_57c57d86ce697c3aa4ed63d89e278d7f-300x214.jpg"
+      alt="Mặt bằng tổng thể dự án Đông Dương Đức Thượng"
+      width="934"
+      height="666"
+    />
+    Mặt bằng dự án liền kề Đông Dương Đức Thượng, Hoài Đức[/caption]
+  </a>
+
+  <div>
+    <h3><strong>1. Thiết kế và mật độ xây dựng</strong></h3>
+    <span style="font-size: 100%"
+      >Diện tích lô đất: 80m2 với chiều rộng mặt tiền 5m và chiều dài 16m. Xây
+      dựng bao gồm 4 tầng và 1 tum, với tổng diện tích sàn xây dựng là 247m2.
+      Mật độ xây dựng được giữ ở mức 80%.</span
+    >
+    <h3>
+      <span id="Cac_loai_duong_trong_du_an" class="ez-toc-section"></span
+      ><strong>2. Các loại đường trong dự án</strong>
+    </h3>
+    <ul>
+      <li>- Đường rộng 12m, với vỉa hè mỗi bên là 3m, lòng đường rộng 6m</li>
+      <li>
+        - Đường rộng 24m, với vỉa hè mỗi bên là 5m, lòng đường hai chiều rộng
+        14m.
+      </li>
+      <li>
+        - Đường rộng 30m, với vỉa hè mỗi bên là 5m, có dải phân cách 5m, có 2
+        lòng đường 1 chiều rộng 7.5m.
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="tien-ich">
+  <h2><strong>Tiện Ích Liền Kề Đông Dương Đức Thượng</strong></h2>
+  <p>
+    Dù có quy mô không lớn, chỉ gần 8ha, nhưng chủ đầu tư vẫn quy hoạch đầy đủ
+    tiện ích đáp ứng nhu cầu về môi trường sống, an sinh, văn minh đô thị cho
+    những cư dân của mình:
+  </p>
+  <ul>
+    <li>- Trường mầm non</li>
+    <li>- 2 khu công viên cây xanh</li>
+    <li>- 2 bãi đỗ xe ngoài trời có mái che với quy mô hơn 1200m2</li>
+    <li>
+      - Các tiện ích nhỏ như: vườn hoa, khu thể thao ngoài trời, khu tổ chức sự
+      kiện ngoài trời cho cư dân có lắp đặt sẵn đèn chiếu sáng cho các hoạt động
+      buổi tối
+    </li>
+    <li>
+      - Khu vui chơi trẻ em với những đồ chơi như cầu trượt, bập bênh, thú cưỡi,
+      mâm xoay, xích đu…
+    </li>
+    <li>
+      - Khu thể dục dành cho người lớn tuổi với những thiết bị tập nhẹ nhàng:
+      bàn xoay eo, thiết bị tập xoay tay vai, đi bộ trên không,
+    </li>
+    <li>
+      - Dọc các tuyến đường trong nội khu chủ đầu tư đều bố trí trồng cây xanh
+      đô thị tạo ra những không gian đi bộ nhiều bóng mát, không gian trong lành
+      hơn cho cư dân.
+    </li>
+  </ul>
+  <img
+    class="wp-image-287 aligncenter"
+    src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085627252007_8dc67e17da28b4eb1d187ec76d85cbd6-300x205.jpg"
+    alt=""
+    width="974"
+    height="666"
+  />
+
+  [caption id="attachment_286" align="aligncenter" width="959"]<img
+    class="wp-image-286"
+    src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/vuon-hoa-300x139.jpg"
+    alt="Tiện Ích Dự Án Liền Kề Đông Dương Đức Thượng"
+    width="959"
+    height="444"
+  />
+  Tiện Ích Dự Án Liền Kề Đông Dương Đức Thượng[/caption]
+  <h2><strong>Chủ đầu tư dự án Đông Dương Đức Thượng là ai?</strong></h2>
+  <strong>Chủ đầu tư dự án Đông Dương Đức Thương</strong> là công ty Cổ phần Đầu
+  tư Xây dựng và Phát triển Đông Dương. Công ty ra đời với giấy chứng nhận ĐKKD
+  số 0101742294 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp. Thành lập vào
+  ngày 28/3/2008. Trải qua quá trình điều chỉnh lần thứ 8 vào ngày 29/6/2020.
+  Công ty hoạt động chủ yếu trong lĩnh vực đầu tư xây dựng và kinh doanh bất
+  động sản. Đồng thời tham gia vào lĩnh vực kinh doanh khách sạn cùng với sản
+  xuất buôn bán vật liệu xây dựng. [caption id="attachment_288"
+  align="aligncenter" width="943"]<img
+    class="wp-image-288"
+    src="https://batdongsanhanoi.net.vn/wp-content/uploads/2024/10/z5085627256029_650c1235094d3594c2afe0ad452c17a4-300x215.jpg"
+    alt="Chủ đầu tư dự án Đông Dương Đức Thương là công ty Cổ phần Đầu tư Xây dựng và Phát triển Đông Dương"
+    width="943"
+    height="676"
+  />
+  Chủ đầu tư dự án Đông Dương Đức Thương là công ty Cổ phần Đầu tư Xây dựng và
+  Phát triển Đông Dương[/caption]
+  <h4></h4>
+  <h4>
+    Trên đây là toàn bộ thông tin về dự án Đông Dương Đức Thượng mới nhất 2025
+    được cập nhật. Để cập nhật chi tiết về giá bán, chính sách bán hàng Anh/chị
+    quý khách hàng vui lòng để lại thông tin trong form tư vấn. Hoặc gọi
+    Hotline cho chúng tôi để được hỗ trợ tư vấn nhanh và nhiệt tình nhất.
+  </h4>
+  <p style="text-align: center">
+    <span style="font-size: 180%; color: #d83131"
+      ><strong>PHÒNG KINH DOANH CHỦ ĐẦU TƯ</strong></span
+    >
+  </p>
+  <p style="text-align: center">
+    <span style="font-size: 180%; color: #d83131"
+      ><strong> <span style="font-size: 200%">0934 69 9191</span></strong></span
+    >
+  </p>
+  &nbsp;
+</div>
