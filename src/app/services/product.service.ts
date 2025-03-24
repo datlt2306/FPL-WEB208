@@ -14,7 +14,10 @@ export class ProductService {
   create(formData: any): Observable<any> {
     return this.http.post<any>(`http://localhost:3000/products`, formData);
   }
-  update() {
-
+  updateOne(formData: any, id: number): Observable<any> {
+    return this.http.put<any>(`http://localhost:3000/products/${id}`, formData);
+  }
+  getOne(id: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/products/${id}`);
   }
 }
