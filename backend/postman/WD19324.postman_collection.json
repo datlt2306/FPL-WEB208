@@ -1,0 +1,127 @@
+{
+    "info": {
+        "_postman_id": "5dfcdb79-352b-4485-9cbf-a43179620ccf",
+        "name": "WD19324",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "22685679"
+    },
+    "item": [
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Get All Products",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{host}}/products",
+                            "host": ["{{host}}"],
+                            "path": ["products"]
+                        },
+                        "description": "Lấy danh sách tất cả sản phẩm"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Product By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{host}}/products/64fb3d2f5a4a6d68c9141362",
+                            "host": ["{{host}}"],
+                            "path": ["products", "64fb3d2f5a4a6d68c9141362"]
+                        },
+                        "description": "Lấy thông tin chi tiết của một sản phẩm theo ID"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Product",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"iPhone 14 Pro Max\",\n    \"price\": 1099,\n    \"description\": \"Điện thoại iPhone 14 Pro Max mới nhất của Apple\",\n    \"image\": \"https://example.com/iphone14.jpg\",\n    \"category\": \"Điện thoại\",\n    \"stock\": 50,\n    \"featured\": true\n}"
+                        },
+                        "url": {
+                            "raw": "{{host}}/products",
+                            "host": ["{{host}}"],
+                            "path": ["products"]
+                        },
+                        "description": "Tạo một sản phẩm mới"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Product",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"iPhone 14 Pro Max - Updated\",\n    \"price\": 1199,\n    \"description\": \"Điện thoại iPhone 14 Pro Max phiên bản đặc biệt\",\n    \"image\": \"https://example.com/iphone14-updated.jpg\",\n    \"category\": \"Điện thoại cao cấp\",\n    \"stock\": 45,\n    \"featured\": true\n}"
+                        },
+                        "url": {
+                            "raw": "{{host}}/products/64fb3d2f5a4a6d68c9141362",
+                            "host": ["{{host}}"],
+                            "path": ["products", "64fb3d2f5a4a6d68c9141362"]
+                        },
+                        "description": "Cập nhật thông tin sản phẩm theo ID"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Product",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{host}}/products/64fb3d2f5a4a6d68c9141362",
+                            "host": ["{{host}}"],
+                            "path": ["products", "64fb3d2f5a4a6d68c9141362"]
+                        },
+                        "description": "Xóa sản phẩm theo ID"
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Các API liên quan đến quản lý sản phẩm"
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "host",
+            "value": "http://localhost:8080/api",
+            "type": "string"
+        }
+    ]
+}
