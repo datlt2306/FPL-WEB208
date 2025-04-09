@@ -1,23 +1,37 @@
-<table class="table table-borederd">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Tên</th>
-      <th>Giá</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of products; let i; as: index">
-      <td>{{ i + 1 }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.price }}</td>
-      <td>
-        <button class="btn btn-danger">Xóa</button>
-        <a href="/admin/products/edit/{{ item.id }}" class="btn btn-primary"
-          >Sửa</a
-        >
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Danh sách sản phẩm</h2>
+    <a href="/admin/products/add" class="btn btn-success">Thêm mới</a>
+  </div>
+
+  <div class="alert alert-info" *ngIf="isLoading">Đang tải dữ liệu...</div>
+
+  <table class="table table-bordered table-striped" *ngIf="!isLoading">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price | currency : "VND" }}</td>
+        <td>
+          <button class="btn btn-danger me-2" (click)="removeItem(item.id)">
+            Xóa
+          </button>
+          <button class="btn btn-primary" (click)="navigateToEdit(item.id)">
+            Sửa
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="products.length === 0">
+        <td colspan="4" class="text-center">Không có sản phẩm nào</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

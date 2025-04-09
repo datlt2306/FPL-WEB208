@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "name": "ccccccccc 2132131 1211111 update",
-      "price": 179,
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "Hydro Flask Wide Mouth Water Bottle",
       "description": "Stay hydrated throughout your day with this durable and stylish water bottle. Keeps drinks cold for hours and hot for even longer, perfect for workouts, hikes, or everyday use.",
@@ -1511,6 +1506,23 @@
       "name": "ccccccccc 2132131 1211111 update",
       "price": 179,
       "id": 154
+    },
+    {
+      "name": "3213131",
+      "price": 32131,
+      "id": 155
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$G/JYjf6ov6WAFBj4d9TnWeLJwaTvf70bQfU3q7O4d2udBbBM2TGxy",
+      "id": 1
+    },
+    {
+      "email": "member@gmail.com",
+      "password": "$2a$10$UfH.bP8puchUBZlj9Ja7LeTiKn6yPr7EjS2k/bLDVqk9YG6dkDzim",
+      "id": 2
     }
   ]
 }

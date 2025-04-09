@@ -1,28 +1,70 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" placeholder="Tên sản phẩm" formControlName="name" />
-  <div
-    *ngIf="
-      form.get('name').invalid &&
-      (form.get('name').dirty || form.get('name').touched)
-    "
-  >
-    <div *ngIf="form.get('name')?.errors?.required">
-      Tên sản phẩm không được để trống
-    </div>
-    <div *ngIf="form.get('name')?.errors?.minlength">
-      Tên sản phẩm phải có ít nhất 6 ký tự
-    </div>
+<div class="card">
+  <div class="card-header">
+    <h2>Thêm sản phẩm mới</h2>
   </div>
-  <input type="number" placeholder="Giá sản phẩm" formControlName="price" />
-  <div
-    *ngIf="
-      form.get('price').invalid &&
-      (form.get('price').dirty || form.get('price').touched)
-    "
-  >
-    <div *ngIf="form.get('price')?.errors?.required">
-      Tên sản phẩm không được để trống
-    </div>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+      <div class="mb-3">
+        <label class="form-label">Tên sản phẩm</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Tên sản phẩm"
+          formControlName="name"
+          [ngClass]="{
+            'is-invalid':
+              form.get('name')?.invalid &&
+              (form.get('name')?.dirty || form.get('name')?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            form.get('name')?.invalid &&
+            (form.get('name')?.dirty || form.get('name')?.touched)
+          "
+        >
+          <div *ngIf="form.get('name')?.errors?.required">
+            Tên sản phẩm không được để trống
+          </div>
+          <div *ngIf="form.get('name')?.errors?.minlength">
+            Tên sản phẩm phải có ít nhất 6 ký tự
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Giá sản phẩm</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Giá sản phẩm"
+          formControlName="price"
+          [ngClass]="{
+            'is-invalid':
+              form.get('price')?.invalid &&
+              (form.get('price')?.dirty || form.get('price')?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            form.get('price')?.invalid &&
+            (form.get('price')?.dirty || form.get('price')?.touched)
+          "
+        >
+          <div *ngIf="form.get('price')?.errors?.required">
+            Giá sản phẩm không được để trống
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          Thêm sản phẩm
+        </button>
+        <a routerLink="/admin/products" class="btn btn-secondary">Quay lại</a>
+      </div>
+    </form>
   </div>
-  <button type="submit">Save</button>
-</form>
+</div>
